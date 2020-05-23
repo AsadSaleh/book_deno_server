@@ -1,25 +1,19 @@
 import { Router } from "https://deno.land/x/oak/mod.ts";
 import {
-  getBooks,
-  getBook,
-  addBook,
-  updateBook,
-  deleteBook,
   getProducts,
   getProduct,
+  createProduct,
+  deleteProduct,
+  updateProduct,
 } from "./controller.ts";
 
 const router = new Router();
-router.get("/books", getBooks)
-  .get("/books/:isbn", getBook)
-  .post("/books", addBook)
-  .put("/books/:isbn", updateBook)
-  .delete("/books/:isbn", deleteBook)
+router
   // products
   .get("/products", getProducts)
   .get("/products/:id", getProduct)
-  .post("/products", () => {})
-  .put("/products/:id", () => {})
-  .delete("/products/:id", () => {});
+  .post("/products", createProduct)
+  .put("/products/:id", updateProduct)
+  .delete("/products/:id", deleteProduct);
 
 export default router;

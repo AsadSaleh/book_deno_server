@@ -4,3 +4,23 @@ GET http://localhost:7700/products
 
 GET http://localhost:7700/products/5ec8dc390b751142d473616d
 
+###
+POST http://localhost:7700/products
+content-type: application/json
+
+{
+  "name": "Bola",
+  "desc": "Cocok untuk bermain bola",
+  "price": 150000
+}
+
+###
+PUT http://localhost:7700/products/5ec9540a00108d7800fb7c79
+Content-Type: application/json
+
+{
+  "desc": "Hmm, menarikaaaa"
+}
+
+###
+DELETE http://localhost:7700/products/5ec9540a00108d7800fb7c78
