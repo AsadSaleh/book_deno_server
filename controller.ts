@@ -10,7 +10,7 @@ const database = db.getDatabase;
 const products = database.collection("products");
 
 export const getProducts = async ({ response }: { response: any }) => {
-  const res = await products.find({ name: "Sepatu Nike React X40" });
+  const res = await products.find({});
   console.log("res:", res);
   response.status = 200;
   response.body = res;
