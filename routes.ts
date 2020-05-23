@@ -6,6 +6,7 @@ import {
   updateBook,
   deleteBook,
   getProducts,
+  getProduct,
 } from "./controller.ts";
 
 const router = new Router();
@@ -16,7 +17,7 @@ router.get("/books", getBooks)
   .delete("/books/:isbn", deleteBook)
   // products
   .get("/products", getProducts)
-  .get("/products/:id", () => {})
+  .get("/products/:id", getProduct)
   .post("/products", () => {})
   .put("/products/:id", () => {})
   .delete("/products/:id", () => {});

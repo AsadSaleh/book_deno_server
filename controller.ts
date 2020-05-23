@@ -1,4 +1,5 @@
 import db from "./db.ts";
+import { ObjectId } from "https://deno.land/x/mongo@v0.6.0/mod.ts";
 
 interface IBook {
   isbn: string;
@@ -11,6 +12,17 @@ const products = database.collection("products");
 
 export const getProducts = async ({ response }: { response: any }) => {
   const res = await products.find({});
+  console.log("res:", res);
+  response.status = 200;
+  response.body = res;
+};
+
+export const getProduct = async (
+  { response, params: { id } }: { response: any; params: { id: string } },
+) => {
+  const res = await products.findOne(
+    { _id: ObjectId(id) },
+  );
   console.log("res:", res);
   response.status = 200;
   response.body = res;

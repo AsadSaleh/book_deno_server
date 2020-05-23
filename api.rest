@@ -1,2 +1,6 @@
-http://localhost:7700/products
+GET http://localhost:7700/products
+
+###
+
+GET http://localhost:7700/products/5ec8dc390b751142d473616d
 
